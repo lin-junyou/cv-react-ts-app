@@ -1,0 +1,93 @@
+import { useEffect, useState } from 'react'
+import './Header.css'
+
+interface HeaderProps {
+  activeSection: string
+  setActiveSection: (section: string) => void
+  theme: 'light' | 'dark'
+  toggleTheme: () => void
+}
+
+const Header = ({ activeSection, setActiveSection, theme, toggleTheme }: HeaderProps) => {
+  const [scrolled, setScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  useEffect(() => {
+    const observerOptions = {
+      root: null,
+      rootMargin: '-50% 0px -50% 0px',
+      threshold: 0,
+    }
+
+    const observerCallback = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id)
+        }
+      })
+    }
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions)
+
+    const sections = document.querySelectorAll('section[id]')
+    sections.forEach(section => observer.observe(section))
+
+    return () => {
+      sections.forEach(section => observer.unobserve(section))
+    }
+  }, [setActiveSection])
+
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId)
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' })
+      setActiveSection(sectionId)
+    }
+  }
+
+  const navItems = [
+    { id: 'home', label: '首頁' },
+    { id: 'about', label: '關於我' },
+    { id: 'skills', label: '技術棧' },
+    { id: 'projects', label: '專案' },
+    { id: 'interests', label: '興趣' },
+    { id: 'contact', label: '聯絡' },
+  ]
+
+  return (
+    <header className={`header ${scrolled ? 'scrolled' : ''}`}>
+      <div className="header-content">
+        <div className="logo">
+          <img src="/ljy-logo.svg" alt="Logo" className="logo-icon" />
+          <span className="logo-bracket">{'<'}</span>
+          <span className="logo-text">JY</span>
+          <span className="logo-bracket">{'/>'}</span>
+        </div>
+        <nav className="nav">
+          {navItems.map(item => (
+            <button
+              key={item.id}
+              className={`nav-link ${activeSection === item.id ? 'active' : ''}`}
+              onClick={() => scrollToSection(item.id)}
+            >
+              {item.label}
+            </button>
+          ))}
+          <button className="theme-toggle" onClick={toggleTheme} aria-label="切換主題">
+            {theme === 'dark' ? '☀️' : '🌙'}
+          </button>
+        </nav>
+      </div>
+    </header>
+  )
+}
+
+export default Header

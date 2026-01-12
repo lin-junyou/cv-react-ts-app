@@ -1,0 +1,323 @@
+.interests {
+  background: var(--bg-primary);
+}
+
+.interests-intro {
+  text-align: center;
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  margin-bottom: 3rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.highlight-text {
+  color: var(--accent-cyan);
+  font-weight: 600;
+}
+
+.interests-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.interest-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 2.5rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.interest-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--accent-blue);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.interest-card.color-cyan::before {
+  background: var(--accent-cyan);
+}
+
+.interest-card.color-green::before {
+  background: var(--accent-green);
+}
+
+.interest-card.color-blue::before {
+  background: var(--accent-blue);
+}
+
+.interest-card.color-purple::before {
+  background: #a855f7;
+}
+
+.interest-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--accent-blue);
+  box-shadow: 0 15px 40px rgba(59, 130, 246, 0.15);
+}
+
+.interest-card:hover::before {
+  transform: scaleX(1);
+}
+
+.interest-icon {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+}
+
+.interest-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.interest-description {
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+}
+
+.interest-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.stat-value {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--accent-cyan);
+  font-family: 'Consolas', monospace;
+}
+
+.philosophy-box {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 3rem;
+  margin-top: 2rem;
+}
+
+.philosophy-quote {
+  position: relative;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 3rem;
+}
+
+.philosophy-quote::before {
+  content: '"';
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 4rem;
+  color: var(--accent-blue);
+  opacity: 0.3;
+  font-family: Georgia, serif;
+  line-height: 1;
+}
+
+.philosophy-quote::after {
+  content: '"';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 4rem;
+  color: var(--accent-blue);
+  opacity: 0.3;
+  font-family: Georgia, serif;
+  line-height: 1;
+}
+
+.philosophy-quote p {
+  font-size: 1.15rem;
+  color: var(--text-primary);
+  line-height: 1.9;
+  font-style: italic;
+  margin: 0;
+}
+
+@media (max-width: 968px) {
+  .interests-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .interest-card {
+    padding: 2.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .interests-intro {
+    font-size: 1.1rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .interest-card {
+    padding: 2rem;
+  }
+
+  .interest-icon {
+    font-size: 3rem;
+  }
+
+  .interest-title {
+    font-size: 1.4rem;
+  }
+
+  .interest-description {
+    font-size: 0.95rem;
+  }
+
+  .philosophy-box {
+    padding: 2.5rem;
+  }
+
+  .philosophy-quote::before,
+  .philosophy-quote::after {
+    font-size: 3.8rem;
+  }
+
+  .philosophy-quote p {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .interests-intro {
+    font-size: 1.05rem;
+    margin-bottom: 2rem;
+  }
+
+  .interest-card {
+    padding: 2rem;
+  }
+
+  .interest-icon {
+    font-size: 2.8rem;
+  }
+
+  .interest-title {
+    font-size: 1.3rem;
+  }
+
+  .interest-stats {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+
+  .philosophy-box {
+    padding: 2.2rem;
+  }
+
+  .philosophy-quote::before,
+  .philosophy-quote::after {
+    font-size: 3.5rem;
+  }
+
+  .philosophy-quote p {
+    font-size: 1.05rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .interests-intro {
+    font-size: 1rem;
+  }
+
+  .interest-card {
+    padding: 1.8rem;
+  }
+
+  .interest-icon {
+    font-size: 2.5rem;
+  }
+
+  .interest-title {
+    font-size: 1.2rem;
+  }
+
+  .interest-description {
+    font-size: 0.9rem;
+  }
+
+  .interest-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .stat-label {
+    font-size: 0.8rem;
+  }
+
+  .stat-value {
+    font-size: 1rem;
+  }
+
+  .philosophy-box {
+    padding: 1.8rem;
+  }
+
+  .philosophy-quote::before,
+  .philosophy-quote::after {
+    font-size: 3rem;
+  }
+
+  .philosophy-quote p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .interest-card {
+    padding: 1.5rem;
+  }
+
+  .interest-icon {
+    font-size: 2.2rem;
+  }
+
+  .interest-title {
+    font-size: 1.1rem;
+  }
+
+  .interest-description {
+    font-size: 0.85rem;
+  }
+
+  .philosophy-quote::before,
+  .philosophy-quote::after {
+    font-size: 2.5rem;
+  }
+
+  .philosophy-quote p {
+    font-size: 0.95rem;
+  }
+}
