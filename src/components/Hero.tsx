@@ -2,14 +2,10 @@ import { useEffect, useState } from 'react'
 import './Hero.css'
 
 const roles = [
-  '用數據，探索運動',
-  'Explore Sports Through Data',
   '運動科技系統架構師',
   'Sports Tech Architect',
   '後端軟體工程師',
   'Backend Software Engineer',
-  'AI 基礎設施工程師',
-  'AI Infra Engineer',
 ]
 
 const Hero = () => {
@@ -127,7 +123,7 @@ const Hero = () => {
                 <span className="property">education</span>: [
                 {`
     `}
-                <span className="string">"國立中興大學 資訊工程學系碩士（在學）"</span>,
+                <span className="string">"國立中興大學 資訊工程學系碩士在職專班（在學）"</span>,
                 {`
     `}
                 <span className="string">
@@ -145,7 +141,7 @@ const Hero = () => {
                 <span className="property">stack</span>: [
                 {`
     `}
-                <span className="string">"Backend: FastAPI / .NET / Laravel"</span>,
+                <span className="string">"Backend: FastAPI / .NET Core / Laravel"</span>,
                 {`
     `}
                 <span className="string">"Frontend: React / TypeScript / Vue"</span>,
@@ -210,8 +206,8 @@ const Hero = () => {
                 <span className="string">"國家運動科學中心"</span>,
                 {`
   `}
-                <span className="property">role</span>: <span className="string">"系統架構師"</span>
-                ,
+                <span className="property">role</span>:{' '}
+                <span className="string">"行政管理處資訊組資訊人員（系統架構師）"</span>,
                 {`
   `}
                 <span className="property">experience</span>:{' '}
@@ -221,16 +217,16 @@ const Hero = () => {
                 <span className="property">stack</span>: [
                 {`
     `}
-                <span className="string">"FastAPI / .NET"</span>,
+                <span className="string">"FastAPI / .NET Core / Laravel"</span>,
                 {`
     `}
-                <span className="string">"React / TypeScript"</span>,
+                <span className="string">"React / TypeScript / Vue"</span>,
                 {`
     `}
-                <span className="string">"K8s / Docker"</span>,
+                <span className="string">"K8s / Docker / Proxmox"</span>,
                 {`
     `}
-                <span className="string">"GPU vGPU / LLM"</span>
+                <span className="string">"GPU vGPU / Ollama / LLM"</span>
                 {`
   `}
                 ],

@@ -6,9 +6,9 @@ const Interests = () => {
       icon: '⚾',
       title: '棒球數據分析',
       description:
-        '熱愛棒球運動，更著迷於運動數據分析。曾參與味全龍職業棒球隊數據系統開發，體會到數據如何改變運動訓練與戰術。',
+        '熱愛觀賞棒球運動，更著迷於運動數據分析。曾參與味全龍職業棒球隊數據系統開發，體會到數據如何改變運動訓練與戰術。',
       stats: [
-        { label: '專案經驗', value: '3 年+' },
+        { label: '專案經驗', value: '2 年+' },
         { label: '合作球隊', value: '味全龍' },
       ],
       color: 'cyan',
@@ -24,7 +24,7 @@ const Interests = () => {
       color: 'green',
     },
     {
-      icon: '📊',
+      icon: '🏟️',
       title: '運動科技',
       description:
         '關注運動科技發展，包含穿戴裝置、影像分析、數據視覺化等。將科技應用於運動，是我最大的興趣與專長。',
@@ -52,8 +52,9 @@ const Interests = () => {
       <div className="section-container">
         <h2 className="section-title">興趣與生活</h2>
         <p className="interests-intro">
-          從<span className="highlight-text">國立臺灣體育運動大學</span>畢業，
-          我將對運動的熱愛轉化為科技的實踐。
+          從<span className="highlight-text">國立臺灣體育運動大學運動資訊與傳播學系</span>
+          畢業，以<span className="highlight-text">國立中興大學資訊工程學系</span>
+          ，作為實踐對運動科技熱愛的技術起點。
           <span className="highlight-text">用數據，探索運動</span>不只是口號，更是我的人生志業。
         </p>
         <div className="interests-grid">

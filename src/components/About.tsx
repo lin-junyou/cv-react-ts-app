@@ -54,7 +54,7 @@ const About = () => {
               畢業於<span className="highlight">國立臺灣體育運動大學 運動資訊與傳播學系</span>，
               現任<span className="highlight">行政法人國家運動科學中心 行政管理處資訊組</span>
               資訊人員， 同時就讀
-              <span className="highlight">國立中興大學資訊工程學系碩士</span>。
+              <span className="highlight">國立中興大學資訊工程學系碩士在職專班</span>。
             </p>
             <p>
               <strong>職涯歷程：</strong>從臺灣體大

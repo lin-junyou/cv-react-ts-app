@@ -31,7 +31,7 @@ const Projects = () => {
       highlights: ['傷害記錄與回場資料建檔', '回場準備度評估與監控', '資訊整合與決策支援'],
     },
     {
-      title: 'Cloudflare 反向代理架構',
+      title: 'Cloudflare 服務架構',
       company: '行政法人國家運動科學中心',
       period: '2025.11 - 現在',
       description:

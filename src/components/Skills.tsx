@@ -43,7 +43,7 @@ const Skills = () => {
       ],
     },
     {
-      title: '前端開發',
+      title: '前端開發框架',
       icon: '🎨',
       skills: [
         { name: 'RWD 響應式設計', level: 75 },
